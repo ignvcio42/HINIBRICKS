@@ -1,7 +1,6 @@
 "use client";
 import React, { useState, useEffect } from 'react';
-import { Mail, Clock, ArrowRight, CheckCircle } from 'lucide-react';
-import Image from 'next/image';
+import { Mail, ArrowRight, CheckCircle } from 'lucide-react';
 
 interface Props {
   launchDate: Date; // Fecha de lanzamiento

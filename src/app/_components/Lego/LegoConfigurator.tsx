@@ -59,7 +59,7 @@ export const LegoConfigurator: React.FC<LegoConfiguratorProps> = ({ plan, initia
         fig2: FigureSelection;
         fig3: FigureSelection;
         fig4: FigureSelection;
-    }>(initialSelections || {
+    }>(initialSelections ?? {
         fig1: { sexo: null, hair: null, face: null, body: null, legs: null, accs: [] },
         fig2: { sexo: null, hair: null, face: null, body: null, legs: null, accs: [] },
         fig3: { sexo: null, hair: null, face: null, body: null, legs: null, accs: [] },
@@ -100,7 +100,7 @@ export const LegoConfigurator: React.FC<LegoConfiguratorProps> = ({ plan, initia
     };
 
     // Calcular accesorios extra que tienen costo adicional
-    const calculateExtraAccessories = () => {
+    const calculateExtraAccessories = useCallback(() => {
         let extraCount = 0;
         const maxFigures = plan.maxFigures;
         
@@ -114,13 +114,13 @@ export const LegoConfigurator: React.FC<LegoConfiguratorProps> = ({ plan, initia
         }
         
         return extraCount;
-    };
+    }, [plan.maxFigures, plan.maxAccsPerFigure, selections, getFigureKey]);
 
     // Calcular precio total
     const totalPrice = useMemo(() => {
         const extraAccs = calculateExtraAccessories();
         return plan.price + (extraAccs * plan.accExtraCost);
-    }, [selections, plan]);
+    }, [plan.price, plan.accExtraCost, calculateExtraAccessories]);
 
     // Helper para saber si una categoría específica ya tiene selección
     const isCategoryCompleted = (catId: string) => {

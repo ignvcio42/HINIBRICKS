@@ -28,7 +28,7 @@ interface CustomerInfoFormProps {
 }
 
 export const CustomerInfoForm: React.FC<CustomerInfoFormProps> = ({ initialData, onBack, onSubmit }) => {
-    const [formData, setFormData] = useState<CustomerInfo>(initialData || {
+    const [formData, setFormData] = useState<CustomerInfo>(initialData ?? {
         name: '',
         email: '',
         phone: '',
