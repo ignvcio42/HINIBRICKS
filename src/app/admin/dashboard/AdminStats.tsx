@@ -83,7 +83,7 @@ export const AdminStats: React.FC<AdminStatsProps> = ({ orders, isLoading }) => 
   // Plan más popular
   const planCounts: Record<string, number> = {};
   orders.forEach(order => {
-    planCounts[order.planName] = (planCounts[order.planName] || 0) + 1;
+    planCounts[order.planName] = (planCounts[order.planName] ?? 0) + 1;
   });
   const popularPlan = Object.entries(planCounts).sort((a, b) => b[1] - a[1])[0];
 
@@ -91,16 +91,17 @@ export const AdminStats: React.FC<AdminStatsProps> = ({ orders, isLoading }) => 
   const itemCounts: Record<number, number> = {};
   orders.forEach(order => {
     order.figures.forEach(fig => {
-      if (fig.hairId) itemCounts[fig.hairId] = (itemCounts[fig.hairId] || 0) + 1;
-      if (fig.faceId) itemCounts[fig.faceId] = (itemCounts[fig.faceId] || 0) + 1;
-      if (fig.bodyId) itemCounts[fig.bodyId] = (itemCounts[fig.bodyId] || 0) + 1;
-      if (fig.legsId) itemCounts[fig.legsId] = (itemCounts[fig.legsId] || 0) + 1;
+      if (fig.hairId) itemCounts[fig.hairId] = (itemCounts[fig.hairId] ?? 0) + 1;
+      if (fig.faceId) itemCounts[fig.faceId] = (itemCounts[fig.faceId] ?? 0) + 1;
+      if (fig.bodyId) itemCounts[fig.bodyId] = (itemCounts[fig.bodyId] ?? 0) + 1;
+      if (fig.legsId) itemCounts[fig.legsId] = (itemCounts[fig.legsId] ?? 0) + 1;
       try {
-        const accs: number[] = JSON.parse(fig.accessories);
+        const parsed = JSON.parse(fig.accessories) as unknown;
+        const accs = Array.isArray(parsed) ? (parsed as number[]) : [];
         accs.forEach(accId => {
-          itemCounts[accId] = (itemCounts[accId] || 0) + 1;
+          itemCounts[accId] = (itemCounts[accId] ?? 0) + 1;
         });
-      } catch (e) {}
+      } catch (_e) {}
     });
   });
 

@@ -87,15 +87,16 @@ export const OrdersList: React.FC<OrdersListProps> = ({ orders, isLoading, onUpd
   // Helper para buscar item completo por ID
   const getItemById = (id: number | null): LegoItem | null => {
     if (!id) return null;
-    return allLegoItems.find(p => p.id === id) || null;
+    return allLegoItems.find(p => p.id === id) ?? null;
   };
 
   // Helper para parsear accesorios
   const getAccessoriesItems = (accsString: string): LegoItem[] => {
     try {
-      const ids: number[] = JSON.parse(accsString);
+      const parsed = JSON.parse(accsString) as unknown;
+      const ids = Array.isArray(parsed) ? (parsed as number[]) : [];
       return ids.map(id => getItemById(id)).filter((item): item is LegoItem => item !== null);
-    } catch (e) {
+    } catch (_e) {
       return [];
     }
   };

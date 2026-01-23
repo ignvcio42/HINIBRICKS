@@ -53,7 +53,7 @@ export const orderRouter = createTRPCRouter({
 
       // Extraer figuras configuradas
       const figures = Object.entries(selections)
-        .map(([key, config], index) => {
+        .map(([_key, config], index) => {
           // Verificar si la figura está completa
           if (
             config.hair &&

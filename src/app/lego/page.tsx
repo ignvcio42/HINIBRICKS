@@ -30,7 +30,6 @@ export default function LegoPage() {
   const [customerInfo, setCustomerInfo] = useState<CustomerInfo | null>(null)
   const [showSuccessModal, setShowSuccessModal] = useState(false)
   const [confirmedOrderId, setConfirmedOrderId] = useState<number | null>(null)
-  const [showPlansPage, setShowPlansPage] = useState(true)
   const [orderData, setOrderData] = useState<{
     selections: {
       fig1: FigureSelection;
