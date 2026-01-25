@@ -12,6 +12,11 @@ export const metadata: Metadata = {
   title: "HINIBRICKS",
   description: "HINIBRICKS",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 1,
+  },
 };
 
 const geist = Geist({

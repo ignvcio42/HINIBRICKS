@@ -148,7 +148,7 @@ export const ComingSoon = ({ launchDate, onUnlock, hideNavbarFooter = false }: P
                     disabled={isSubmitting}
                     className="w-full bg-yellow-400 hover:bg-yellow-300 text-blue-900 font-bold py-4 rounded-xl transition-all flex items-center justify-center gap-2 group disabled:opacity-70 disabled:cursor-wait"
                 >
-                    {isSubmitting ? 'Guardando...' : 'Avisadme del Lanzamiento'}
+                    {isSubmitting ? 'Guardando...' : 'Avisame del Lanzamiento'}
                     {!isSubmitting && <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />}
                 </button>
               </form>

@@ -159,9 +159,9 @@ export default function LegoPage() {
   }
 
   return (
-    <main className="min-h-screen bg-slate-50 py-10">
-      <div className="container mx-auto">
-        <h1 className="text-3xl font-black text-center text-blue-900 mb-8">
+    <main className="min-h-screen bg-slate-50 py-4 sm:py-6 lg:py-10">
+      <div className="container mx-auto px-2 sm:px-4">
+        <h1 className="text-xl sm:text-2xl lg:text-3xl font-black text-center text-blue-900 mb-4 sm:mb-6 lg:mb-8">
           PERSONALIZA TUS HINIBRICKS
         </h1>
         
@@ -192,28 +192,28 @@ export default function LegoPage() {
             {/* Botón para volver */}
             <button
               onClick={handleBackToPlanSelection}
-              className="flex items-center gap-2 mb-6 text-blue-600 hover:text-blue-700 font-semibold transition-colors"
+              className="flex items-center gap-1.5 lg:gap-2 mb-4 lg:mb-6 text-blue-600 hover:text-blue-700 font-semibold transition-colors text-sm lg:text-base"
             >
-              <ChevronLeft size={20} />
+              <ChevronLeft size={18} className="lg:w-5 lg:h-5" />
               Cambiar Plan
             </button>
 
             {/* Info del plan seleccionado */}
-            <div className="bg-white rounded-2xl p-4 mb-6 shadow-md border border-gray-200">
+            <div className="bg-white rounded-xl lg:rounded-2xl p-3 lg:p-4 mb-4 lg:mb-6 shadow-md border border-gray-200">
               <div className="flex items-center justify-between">
                 <div>
-                  <h3 className="font-bold text-gray-900">
+                  <h3 className="font-bold text-gray-900 text-sm lg:text-base">
                     Plan: {selectedPlan.name}
                   </h3>
-                  <p className="text-sm text-gray-600">
+                  <p className="text-xs lg:text-sm text-gray-600">
                     {selectedPlan.maxFigures} figuras máximo · {selectedPlan.maxAccsPerFigure} accesorio por figura incluido
                   </p>
                 </div>
                 <div className="text-right">
-                  <span className="text-2xl font-black text-blue-600">
+                  <span className="text-xl lg:text-2xl font-black text-blue-600">
                     ${selectedPlan.price.toLocaleString()}
                   </span>
-                  <p className="text-xs text-gray-500">
+                  <p className="text-[10px] lg:text-xs text-gray-500">
                     +${selectedPlan.accExtraCost.toLocaleString()} por accesorio extra
                   </p>
                 </div>
