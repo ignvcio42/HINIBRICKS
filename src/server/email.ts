@@ -84,7 +84,7 @@ export async function sendOrderConfirmedEmails(payload: OrderEmailPayload): Prom
   }
 
   try {
-    const [toCustomer, toAdmin] = await Promise.all([
+    const results = await Promise.all([
       resend.emails.send({
         from: FROM,
         to: payload.customerEmail,
@@ -99,13 +99,21 @@ export async function sendOrderConfirmedEmails(payload: OrderEmailPayload): Prom
       }),
     ]);
 
-    if (toCustomer.error) {
-      console.error("[email] Error al enviar correo al cliente:", toCustomer.error);
-      return { ok: false, error: String(toCustomer.error) };
+    const toCustomer = results[0];
+    const toAdmin = results[1];
+
+    const formatErr = (e: unknown): string =>
+      typeof e === "string" ? e : JSON.stringify(e);
+
+    if (toCustomer && "error" in toCustomer && toCustomer.error != null) {
+      const errMsg = formatErr(toCustomer.error);
+      console.error("[email] Error al enviar correo al cliente:", errMsg);
+      return { ok: false, error: errMsg };
     }
-    if (toAdmin.error) {
-      console.error("[email] Error al enviar correo al admin:", toAdmin.error);
-      return { ok: false, error: String(toAdmin.error) };
+    if (toAdmin && "error" in toAdmin && toAdmin.error != null) {
+      const errMsg = formatErr(toAdmin.error);
+      console.error("[email] Error al enviar correo al admin:", errMsg);
+      return { ok: false, error: errMsg };
     }
     return { ok: true };
   } catch (err) {

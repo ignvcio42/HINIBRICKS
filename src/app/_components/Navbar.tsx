@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { ShoppingCart } from 'lucide-react';
 
 
 export const Navbar = () => {
