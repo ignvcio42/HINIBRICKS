@@ -20,7 +20,7 @@ interface FigureSelection {
     accs: number[];
 }
 
-const PET_EXTRA_COST = 1500;
+const PET_EXTRA_COST = 1000;
 
 interface OrderSummaryProps {
     plan: Plan;

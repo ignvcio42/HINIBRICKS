@@ -9,7 +9,7 @@ import { getFilteredItems, type LegoItem } from '~/data/Lego';
 import { pets } from '~/data/Lego/pets';
 import type { Plan } from './PlanSelector';
 
-const PET_EXTRA_COST = 1500;
+const PET_EXTRA_COST = 1000;
 
 const CATEGORIES = [
     { id: 'hair', label: 'Pelo', icon: Scissors },
