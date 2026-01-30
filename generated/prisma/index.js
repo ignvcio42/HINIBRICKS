@@ -175,7 +175,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "D:\\Ignacio\\Hian\\generated\\prisma",
+      "value": "C:\\Users\\hian2\\Documents\\HINISIST\\HINIBRICKS\\generated\\prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -189,7 +189,7 @@ const config = {
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "D:\\Ignacio\\Hian\\prisma\\schema.prisma",
+    "sourceFilePath": "C:\\Users\\hian2\\Documents\\HINISIST\\HINIBRICKS\\prisma\\schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
@@ -203,6 +203,7 @@ const config = {
     "db"
   ],
   "activeProvider": "postgresql",
+  "postinstall": false,
   "inlineDatasources": {
     "db": {
       "url": {

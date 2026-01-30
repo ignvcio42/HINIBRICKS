@@ -171,7 +171,7 @@ export const accs = [
     },
     {
         id: 22,
-        name: 'accesorio 22',
+        name: 'accesorio 200',
         description: 'accs22',
         image: getCloudinaryUrl('/Accesorios/22.png'),
         category: 'accs',
