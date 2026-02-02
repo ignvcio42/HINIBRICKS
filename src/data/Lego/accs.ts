@@ -129,5 +129,13 @@ export const accs = [
         category: 'accs',
         sexo: 'neutral',
     },
+    {
+        id: 17,
+        name: 'Sin Accesorio',
+        description: 'accs17',
+        image: getCloudinaryUrl('/Accesorios/Sin_Accesorio.png'),
+        category: 'accs',
+        sexo: 'neutral',
+    },
     
 ];
