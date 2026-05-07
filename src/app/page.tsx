@@ -93,14 +93,14 @@ export default function Home() {
 
   // Contenido normal
   return (
-    <main className="flex min-h-screen flex-col items-center">
-      
-      {/* Contenedor LIMITADO (Solo para el Hero y contenido superior) */}
-      <div className="container flex flex-col items-center justify-center gap-12 px-4 py-6">
+    <main className="flex min-h-screen flex-col">
+
+      {/* Hero — Full Width */}
+      <div className="w-full">
         <Hero />
       </div>
 
-      {/* Contenedor FULL WIDTH (El Qa sale del contenedor anterior) */}
+      {/* FAQ — Full Width */}
       <div className="w-full">
         <Qa />
       </div>
