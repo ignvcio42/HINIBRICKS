@@ -174,7 +174,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "C:\\Users\\hian2\\Documents\\HINISIST\\HINIBRICKS\\generated\\prisma",
+      "value": "C:\\Users\\hian2\\HINI\\HINIBRICKS\\generated\\prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -188,7 +188,7 @@ const config = {
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "C:\\Users\\hian2\\Documents\\HINISIST\\HINIBRICKS\\prisma\\schema.prisma",
+    "sourceFilePath": "C:\\Users\\hian2\\HINI\\HINIBRICKS\\prisma\\schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
