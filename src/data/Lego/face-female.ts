@@ -162,4 +162,12 @@ export const faceFemale = [
         category: 'face',
         sexo: 'female',
     },
+    {
+        id: 21,
+        name: 'Rostro Mujer N°21',
+        description: 'Rostro 21',
+        image: getCloudinaryUrl('/Rostros Mujer/Rostro_Mujer_N_21.png'),
+        category: 'face',
+        sexo: 'female',
+    }
 ];
