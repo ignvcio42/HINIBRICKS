@@ -62,7 +62,7 @@ export const hairMale = [
     {
         id: 8,
         name: 'Cabello Hombre N°8',
-        description: 'Pelo 7A',
+        description: 'Pelo 8',
         image: getCloudinaryUrl('/Cabellos Hombre/Cabello_Hombre_N_8.png'),
         category: 'hair',
         sexo: 'male',
@@ -72,7 +72,7 @@ export const hairMale = [
     {
         id: 9,
         name: 'Cabello Hombre N°9',
-        description: 'Pelo 8',
+        description: 'Pelo 9',
         image: getCloudinaryUrl('/Cabellos Hombre/Cabello_Hombre_N_9.png'),
         category: 'hair',
         sexo: 'male',
@@ -80,7 +80,7 @@ export const hairMale = [
     {
         id: 10,
         name: 'Cabello Hombre N°10',
-        description: 'Pelo 8A',
+        description: 'Pelo 10',
         image: getCloudinaryUrl('/Cabellos Hombre/Cabello_Hombre_N_10.png'),
         category: 'hair',
         sexo: 'male',
@@ -90,7 +90,7 @@ export const hairMale = [
     {
         id: 11,
         name: 'Cabello Hombre N°11',
-        description: 'Pelo 9',
+        description: 'Pelo 11',
         image: getCloudinaryUrl('/Cabellos Hombre/Cabello_Hombre_N_11.png'),
         category: 'hair',
         sexo: 'male',
@@ -98,7 +98,7 @@ export const hairMale = [
     {
         id: 12,
         name: 'Cabello Hombre N°12',
-        description: 'Pelo 9A',
+        description: 'Pelo 12',
         image: getCloudinaryUrl('/Cabellos Hombre/Cabello_Hombre_N_12.png'),
         category: 'hair',
         sexo: 'male',
@@ -106,7 +106,7 @@ export const hairMale = [
     {
         id: 13,
         name: 'Cabello Hombre N°13',
-        description: 'Pelo 9A',
+        description: 'Pelo 13',
         image: getCloudinaryUrl('/Cabellos Hombre/Cabello_Hombre_N_13.png'),
         category: 'hair',
         sexo: 'male',
