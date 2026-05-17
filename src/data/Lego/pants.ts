@@ -95,7 +95,7 @@ export const pants = [
         description: 'Pantalón 12',
         image: getCloudinaryUrl('/Pantalones/Pantalon_Infantil_Blanco.png'),
         category: 'legs',
-        sexo: 'female',
+        sexo: 'neutral',
     },
     {
         id: 13,
@@ -103,7 +103,7 @@ export const pants = [
         description: 'Pantalón 13',
         image: getCloudinaryUrl('/Pantalones/Pantalon_Infantil_Gris.png'),
         category: 'legs',
-        sexo: 'female',
+        sexo: 'neutral',
     },
     {
         id: 14,
@@ -111,7 +111,7 @@ export const pants = [
         description: 'Pantalón 14',
         image: getCloudinaryUrl('/Pantalones/Pantalon_Infantil_Rojo.png'),
         category: 'legs',
-        sexo: 'female',
+        sexo: 'neutral',
     },
     {
         id: 15,
@@ -119,7 +119,7 @@ export const pants = [
         description: 'Pantalón 15',
         image: getCloudinaryUrl('/Pantalones/Pantalon_Infantil_Azul_Oscuro.png'),
         category: 'legs',
-        sexo: 'female',
+        sexo: 'neutral',
     },
     {
         id: 16,
@@ -127,6 +127,6 @@ export const pants = [
         description: 'Pantalón 16',
         image: getCloudinaryUrl('/Pantalones/Pantalon_Infantil_Azul.png'),
         category: 'legs',
-        sexo: 'female',
+        sexo: 'neutral',
     },
 ];
