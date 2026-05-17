@@ -77,7 +77,7 @@ export const pants = [
         id: 10,
         name: 'Pantalón Adulto Verde Petroleo',
         description: 'Pantalón 10',
-        image: getCloudinaryUrl('/Pantalones/Pantalon_Adulto_Verde_Petrol.png'),
+        image: getCloudinaryUrl('/Pantalones/Pantalon_Adulto_Verde_Petroleo.png'),
         category: 'legs',
         sexo: 'neutral',
     },
