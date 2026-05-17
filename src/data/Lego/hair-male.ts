@@ -49,8 +49,6 @@ export const hairMale = [
         category: 'hair',
         sexo: 'male',
     },
-    
-    // --- GRUPO 7 y 7A ---
     {
         id: 7,
         name: 'Cabello Hombre N°7',
@@ -67,8 +65,6 @@ export const hairMale = [
         category: 'hair',
         sexo: 'male',
     },
-
-    // --- GRUPO 8 y 8A ---
     {
         id: 9,
         name: 'Cabello Hombre N°9',
@@ -85,8 +81,6 @@ export const hairMale = [
         category: 'hair',
         sexo: 'male',
     },
-
-    // --- GRUPO 9 y 9A ---
     {
         id: 11,
         name: 'Cabello Hombre N°11',
