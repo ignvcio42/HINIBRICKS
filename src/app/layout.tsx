@@ -1,6 +1,6 @@
 import "~/styles/globals.css";
 
-import { type Metadata } from "next";
+import { type Metadata, type Viewport } from "next";
 import { Geist } from "next/font/google";
 
 import { TRPCReactProvider } from "~/trpc/react";
@@ -8,14 +8,23 @@ import { Navbar } from "./_components/Navbar";
 import { Toaster } from "~/components/ui/sonner"
 import { Footer } from "./_components/Footer";
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+};
+
 export const metadata: Metadata = {
   title: "HINIBRICKS",
   description: "HINIBRICKS",
-  icons: [{ rel: "icon", url: "/favicon.ico" }],
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 1,
+  icons: {
+    icon: [
+      { url: "/img/favicon.ico" },
+      { url: "/img/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: [
+      { url: "/img/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
   },
 };
 
