@@ -65,4 +65,13 @@ export const hairMale = [
         category: 'hair',
         sexo: 'male',
     },
+    {
+        id: 9,
+        name: 'Cabello Hombre N°9',
+        description: 'Pelo 9',
+        image: getCloudinaryUrl('/Cabellos Hombre/Cabello_Hombre_N_9.png'),
+        category: 'hair',
+        sexo: 'male',
+    },
+
 ];
