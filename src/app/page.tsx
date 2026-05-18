@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { Hero } from "./_components/Hero";
 import { Qa } from "./_components/Qa";
 import { ComingSoon } from "./_components/ComingSoon";
+import { HomeConfetti } from "./_components/HomeConfetti";
 
 export default function Home() {
   const [showComingSoon, setShowComingSoon] = useState<boolean>(false);
@@ -94,6 +95,8 @@ export default function Home() {
   // Contenido normal
   return (
     <main className="flex min-h-screen flex-col">
+
+      <HomeConfetti />
 
       {/* Hero — Full Width */}
       <div className="w-full">

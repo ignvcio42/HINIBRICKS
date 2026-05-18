@@ -5,6 +5,7 @@ import { Geist } from "next/font/google";
 
 import { TRPCReactProvider } from "~/trpc/react";
 import { Navbar } from "./_components/Navbar";
+import { AnnouncementBar } from "./_components/AnnouncementBar";
 import { Toaster } from "~/components/ui/sonner"
 import { Footer } from "./_components/Footer";
 
@@ -39,6 +40,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${geist.variable}`} suppressHydrationWarning>
       <body suppressHydrationWarning>
+        <AnnouncementBar />
         <Navbar />
         <TRPCReactProvider>{children}</TRPCReactProvider>
         <Toaster />
