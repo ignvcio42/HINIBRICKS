@@ -48,11 +48,6 @@ export const Hero = () => {
                     {/* Columna izquierda: texto + CTA */}
                     <div className="flex flex-1 flex-col items-center text-center md:items-start md:text-left">
 
-                        {/* Badge */}
-                        <span className="mb-5 inline-flex items-center gap-2 rounded-full bg-[#5B5BD6]/10 px-4 py-1.5 text-sm font-semibold text-[#5B5BD6] ring-1 ring-[#5B5BD6]/20">
-                            Figuras de Lego personalizadas
-                        </span>
-
                         {/* Título */}
                         <h1 className="mb-4 text-5xl font-extrabold leading-tight tracking-tight text-gray-900 sm:text-6xl lg:text-7xl">
                             Bienvenido a{' '}

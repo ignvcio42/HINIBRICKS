@@ -1,6 +1,8 @@
 "use client";
 import { useState, useEffect } from "react";
 import { Hero } from "./_components/Hero";
+import { HowToBuy } from "./_components/HowToBuy";
+import { ContactSection } from "./_components/ContactSection";
 import { Qa } from "./_components/Qa";
 import { ComingSoon } from "./_components/ComingSoon";
 import { HomeConfetti } from "./_components/HomeConfetti";
@@ -101,6 +103,16 @@ export default function Home() {
       {/* Hero — Full Width */}
       <div className="w-full">
         <Hero />
+      </div>
+
+      {/* Cómo comprar */}
+      <div className="w-full">
+        <HowToBuy />
+      </div>
+
+      {/* Contacto */}
+      <div className="w-full">
+        <ContactSection />
       </div>
 
       {/* FAQ — Full Width */}

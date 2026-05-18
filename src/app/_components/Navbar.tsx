@@ -16,8 +16,11 @@ export const Navbar = () => {
             {/* ── Desktop nav ── */}
             <nav className="relative mx-auto hidden w-full max-w-[85rem] items-center px-8 py-5 sm:flex">
 
-                {/* Izquierda: Preguntas Frecuentes */}
-                <div className="flex flex-1 items-center justify-end pr-16">
+                {/* Izquierda: Catálogo + Preguntas Frecuentes */}
+                <div className="flex flex-1 items-center justify-end gap-8 pr-16">
+                    <Link href="/catalogo" className={linkClass}>
+                        Catálogo
+                    </Link>
                     <Link href="/#preguntas-frecuentes" className={linkClass}>
                         Preguntas
                     </Link>
@@ -40,7 +43,7 @@ export const Navbar = () => {
 
                 {/* Derecha: Contacto */}
                 <div className="flex flex-1 items-center pl-16">
-                    <Link href="/contacto" className={linkClass}>
+                    <Link href="/#contacto" className={linkClass}>
                         Contacto
                     </Link>
                 </div>
@@ -77,6 +80,13 @@ export const Navbar = () => {
                 <div className="border-t border-gray-100 px-4 pb-4 sm:hidden">
                     <div className="flex flex-col gap-4 pt-4">
                         <Link
+                            href="/catalogo"
+                            className={`${linkClass} text-base`}
+                            onClick={() => setIsOpen(false)}
+                        >
+                            Catálogo
+                        </Link>
+                        <Link
                             href="/#preguntas-frecuentes"
                             className={`${linkClass} text-base`}
                             onClick={() => setIsOpen(false)}
@@ -84,7 +94,7 @@ export const Navbar = () => {
                             Preguntas Frecuentes
                         </Link>
                         <Link
-                            href="/contacto"
+                            href="/#contacto"
                             className={`${linkClass} text-base`}
                             onClick={() => setIsOpen(false)}
                         >
