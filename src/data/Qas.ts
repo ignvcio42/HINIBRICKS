@@ -22,6 +22,6 @@ export const Qas = [
     {
         id: 5,
         question: "¿Puedo pedir y recibir el mismo día?",
-        answer: "Sí, es posible, pero depende de la disponibilidad de los productos y el proceso de fabricación. Si tu pedido es urgente, contáctanos y te ayudaremos a encontrar la mejor solución."
+        answer: "Sí claro, que es posible, pero depende de la disponibilidad de los productos y el proceso de fabricación. Si tu pedido es urgente, contáctanos y te ayudaremos a encontrar la mejor solución."
     },
 ]
