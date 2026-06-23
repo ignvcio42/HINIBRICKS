@@ -1,9 +1,21 @@
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+import { env } from "~/env";
 
-const FROM = process.env.EMAIL_FROM ?? "HiniBricks <pedidos@hinibricks.cl>";
-const ADMIN_EMAIL = process.env.ADMIN_EMAIL ?? "ventas@hinibricks.cl";
+function getFromAddress(): string {
+  const from = env.EMAIL_FROM ?? "HiniBricks <pedidos@hinibricks.cl>";
+  if (from.includes("<")) return from;
+  return `HiniBricks <${from}>`;
+}
+
+function getResendClient(): Resend {
+  if (!env.RESEND_API_KEY) {
+    throw new Error("RESEND_API_KEY no configurado");
+  }
+  return new Resend(env.RESEND_API_KEY);
+}
+
+const ADMIN_EMAIL = env.ADMIN_EMAIL ?? "ventas@hinibricks.cl";
 
 type OrderEmailPayload = {
   orderId: number;
@@ -78,43 +90,49 @@ function escapeHtml(s: string): string {
 }
 
 export async function sendOrderConfirmedEmails(payload: OrderEmailPayload): Promise<{ ok: boolean; error?: string }> {
-  if (!process.env.RESEND_API_KEY) {
+  if (!env.RESEND_API_KEY) {
     console.warn("[email] RESEND_API_KEY no configurado, no se envían correos.");
     return { ok: false, error: "RESEND_API_KEY no configurado" };
   }
 
+  const formatErr = (e: unknown): string =>
+    typeof e === "string" ? e : JSON.stringify(e);
+
   try {
-    const results = await Promise.all([
-      resend.emails.send({
-        from: FROM,
-        to: payload.customerEmail,
-        subject: `Pedido #${payload.orderId} confirmado – HiniBricks`,
-        html: htmlCustomer(payload),
-      }),
-      resend.emails.send({
-        from: FROM,
-        to: ADMIN_EMAIL,
-        subject: `Nuevo pedido #${payload.orderId} – ${payload.customerName}`,
-        html: htmlAdmin(payload),
-      }),
-    ]);
+    const resend = getResendClient();
+    const from = getFromAddress();
 
-    const toCustomer = results[0];
-    const toAdmin = results[1];
+    console.log("[email] Enviando correos para pedido #", payload.orderId);
 
-    const formatErr = (e: unknown): string =>
-      typeof e === "string" ? e : JSON.stringify(e);
+    const toCustomer = await resend.emails.send({
+      from,
+      to: payload.customerEmail,
+      subject: `Pedido #${payload.orderId} confirmado – HiniBricks`,
+      html: htmlCustomer(payload),
+    });
 
-    if (toCustomer && "error" in toCustomer && toCustomer.error != null) {
+    if (toCustomer.error) {
       const errMsg = formatErr(toCustomer.error);
       console.error("[email] Error al enviar correo al cliente:", errMsg);
       return { ok: false, error: errMsg };
     }
-    if (toAdmin && "error" in toAdmin && toAdmin.error != null) {
+
+    console.log("[email] Correo al cliente enviado:", toCustomer.data?.id);
+
+    const toAdmin = await resend.emails.send({
+      from,
+      to: ADMIN_EMAIL,
+      subject: `Nuevo pedido #${payload.orderId} – ${payload.customerName}`,
+      html: htmlAdmin(payload),
+    });
+
+    if (toAdmin.error) {
       const errMsg = formatErr(toAdmin.error);
       console.error("[email] Error al enviar correo al admin:", errMsg);
       return { ok: false, error: errMsg };
     }
+
+    console.log("[email] Correo al admin enviado:", toAdmin.data?.id);
     return { ok: true };
   } catch (err) {
     console.error("[email] Error enviando correos:", err);

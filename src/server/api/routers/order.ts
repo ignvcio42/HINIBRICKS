@@ -113,18 +113,18 @@ export const orderRouter = createTRPCRouter({
         },
       });
 
-      // Envío de correos al cliente y al admin (no bloquea la respuesta si falla)
-      void sendOrderConfirmedEmails({
+      // Envío de correos al cliente y al admin (await necesario en serverless)
+      const emailResult = await sendOrderConfirmedEmails({
         orderId: order.id,
         customerName: customerInfo.name,
         customerEmail: customerInfo.email,
         planName: plan.name,
         totalPrice,
-      }).then((result) => {
-        if (!result.ok) {
-          console.error("[order.create] Correos no enviados:", result.error);
-        }
       });
+
+      if (!emailResult.ok) {
+        console.error("[order.create] Correos no enviados:", emailResult.error);
+      }
 
       return {
         success: true,
